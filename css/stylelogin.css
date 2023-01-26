@@ -1,14 +1,31 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
 
+html{
+    height: 100%;
+    width: 100%;
+}
+
 body{
+    height: 100%;
+    width: 100%;
     background-color: #FAFAFA;
     font-family: Roboto, sans-serif;
 }
 
+p{
+    margin: 0px;
+}
+
+.mainContainer{
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+}
+
 .circularImg{
-    position: absolute;
-    top: 72px;
-    left: 166px;
+    margin-left: 166px;
     height: 576px;
     width: 576px;
     box-shadow: 0px 4px 31px #0000000A;
@@ -17,53 +34,45 @@ body{
 }
 
 .circularImg img{
-    width: 100%;
-    height: 100%;
     border-radius: 50%;
 }
 
+.loginForm{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    margin-left: 164px;
+    justify-content: center;
+}
+
 .logoImg{
-    position: absolute;
-    top: 106px;
-    left: 906px;
     width: 272px;
     height: 58px;
 }
 
 .headingQuote{
-    position: absolute;
-    top: 183px;
-    left: 905px;
-    width: 500px;
-    height: 100px;
-    text-align: left;
     font-size: 40px;
     font-weight: 300;
-    letter-spacing: 0px;
     color: #3E3E3E;
-    opacity: 1;
+    margin-top: 20px;
+    width: 500px;
 }
 
-.redText{
+.headingQuote span{
     font-weight: 900;
     color: #C8242F;
 }
 
 .loginTitle{
-    position: absolute;
-    top: 315px;
-    left: 904px;
-    text-align: left;
     font-weight: 400;
     font-size: 25px;
     color: #3E3E3E;
+    margin-top: 32px;
 }
 
 .formBody{
     margin-top: 24px;
-    top: 372px;
-    left: 907px;
-    position: absolute;
     display: flex;
     flex-direction: column;
 }
@@ -73,6 +82,8 @@ body{
     height: 49px;
     border: 1px solid #ADADAD;
     border-radius: 5px 5px 5px 5px;
+    font-size: 15px;
+    padding-left: 15px;
 }
 
 .inputPass{
@@ -81,10 +92,11 @@ body{
     height: 49px;
     border: 1px solid #ADADAD;
     border-radius: 5px 5px 5px 5px;
+    font-size: 15px;
+    padding-left: 15px;
 }
 
 ::placeholder{
-    padding-left: 15px;
     font-weight: 400;
     font-size: 15px;
 }
@@ -92,7 +104,6 @@ body{
 .submitBtn{
     width: 138px;
     height: 45px;
-    margin-top: 31px;
     background-color: #C8242F;
     border: 0px;
     border-radius: 23px 23px 23px 23px;
@@ -104,13 +115,14 @@ body{
 .formFooter{
     display: flex;
     flex-direction: row;
+    margin-top: 31px;
+    align-items: center;
 }
 
 .formFooter a{
     font-size: 15px;
     color: #ADADAD;
     font-weight: 400;
-    margin-top: 43px;
     margin-left: 171px;
     text-decoration: none;
 }
@@ -126,3 +138,4 @@ body{
     color: #C8242F;
     text-decoration: none;
 }
+

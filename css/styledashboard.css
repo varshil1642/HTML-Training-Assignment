@@ -1,6 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
 
+html{
+    height: 100%;
+    width: 100%;
+}
+
 body{
+    height: 100%;
+    width: 100%;
     font-family: Roboto, sans-serif;
 }
 
@@ -59,13 +66,26 @@ body{
     height: 18px;
 }
 
+.dashboardBody{
+    background-color: #FAFAFA;
+    width: 100%;
+    height: 100%;
+}
+
+.dashboard{
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    width: 100%;
+}
+
 .sideNav{
     display: flex;
     flex-direction: column;
-    width: 210px;
-    height: auto;
+    height: 100%;
     align-items: center;
-    padding-left: 22px;
+    padding-left: 30px;
+    padding-right: 20px;
     padding-top: 25px;
 }
 
@@ -80,6 +100,7 @@ body{
     align-items: center;
     height: 43px;
     width: 183px;
+    border-radius: 5px;
 }
 
 .dashboardIcon{
@@ -95,6 +116,7 @@ body{
     align-items: center;
     height: 43px;
     width: 183px;
+    border-radius: 5px;
 }
 
 .analysisIcon{
@@ -110,6 +132,7 @@ body{
     align-items: center;
     height: 43px;
     width: 183px;
+    border-radius: 5px;
 }
 
 .inboxIcon{
@@ -117,4 +140,97 @@ body{
     margin-right: 13px;
     height: 20px;
     width: 20px;
+}
+
+.historyLink{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 43px;
+    width: 183px;
+    border-radius: 5px;
+}
+
+.historyIcon{
+    margin-left: 18px;
+    margin-right: 13px;
+    height: 20px;
+    width: 20px;
+}
+
+.usersLink{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 43px;
+    width: 183px;
+    border-radius: 5px;
+}
+
+.usersIcon{
+    margin-left: 18px;
+    margin-right: 13px;
+    height: 20px;
+    width: 20px;
+}
+
+.maintenanceLink{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 43px;
+    width: 183px;
+    border-radius: 5px;
+}
+
+.maintenanceIcon{
+    margin-left: 18px;
+    margin-right: 13px;
+    height: 20px;
+    width: 20px;
+}
+
+.settingLink{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 43px;
+    width: 183px;
+    border-radius: 5px;
+}
+
+.settingIcon{
+    margin-left: 18px;
+    margin-right: 13px;
+    height: 20px;
+    width: 20px;
+}
+
+.dashboardLink:hover{
+    background-color: #FFF3F4;
+    color: #C8242F;
+}
+.analysisLink:hover{
+    background-color: #FFF3F4;
+    color: #C8242F;
+}
+.inboxLink:hover{
+    background-color: #FFF3F4;
+    color: #C8242F;
+}
+.historyLink:hover{
+    background-color: #FFF3F4;
+    color: #C8242F;
+}
+.usersLink:hover{
+    background-color: #FFF3F4;
+    color: #C8242F;
+}
+.maintenanceLink:hover{
+    background-color: #FFF3F4;
+    color: #C8242F;
+}
+.settingLink:hover{
+    background-color: #FFF3F4;
+    color: #C8242F;
 }
