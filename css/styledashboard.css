@@ -11,11 +11,26 @@ body{
     font-family: Roboto, sans-serif;
 }
 
+p{
+    margin: 0px;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
 .header{
     display: flex;
     flex-direction: row;
     height: 80px;
+    width: 100%;
     align-items: center;
+    position: sticky;
+    top: 0;
+    left: 0;
+    background-color: #FFFFFF;
+    z-index: 10;
 }
 
 .menuIcon{
@@ -66,17 +81,9 @@ body{
     height: 18px;
 }
 
-.dashboardBody{
-    background-color: #FAFAFA;
-    width: 100%;
-    height: 100%;
-}
-
 .dashboard{
     display: flex;
     flex-direction: row;
-    height: 100%;
-    width: 100%;
 }
 
 .sideNav{
@@ -87,6 +94,11 @@ body{
     padding-left: 30px;
     padding-right: 20px;
     padding-top: 25px;
+    background-color: #FFFFFF;
+    position: sticky;
+    top: 80px;
+    left: 0;
+    z-index: 5;
 }
 
 .sideNav p{
@@ -94,7 +106,254 @@ body{
     font-size: 16px;
 }
 
-.dashboardLink{
+.sideNav div{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 43px;
+    width: 183px;
+    border-radius: 5px;
+}
+
+.sideNav div img{
+    margin-left: 18px;
+    margin-right: 13px;
+    height: 20px;
+    width: 20px;
+}
+
+.sideNav div:hover{
+    background-color: #FFF3F4;
+    color: #C8242F;
+}
+
+.dashboardBody{
+    display: flex;
+    flex-direction: column;
+    padding-top: 41px;
+    padding-left: 48px;
+    padding-bottom: 43px;
+    background-color: #FAFAFA;
+    height: 100%;
+    width: 100%;
+    z-index: 0;
+}
+
+.dashboardTitle{
+    font-size: 30px;
+    font-weight: 500;
+}
+
+.dashCards{
+    display: flex;
+    flex-direction: row;
+    height: 116px;
+    margin-top: 23px;
+}
+
+.cardItem{
+    display: flex;
+    flex-direction: row;
+    background-color: #FFFFFF;
+    width: 220px;
+    align-items: center;
+    justify-content: center;
+    margin-right: 30px;
+    border-radius: 5px;
+}
+
+.cardItem img{
+    margin-right: 20px;
+    height: 33px;
+    width: 33px;
+}
+
+.cardTitle{
+    display: flex;
+    flex-direction: column;
+}
+
+.title{
+    font-weight: 500;
+    font-size: 25px;
+    color: #3E3E3E;
+}
+
+.subTitle{
+    font-size: 15px;
+    color: #3E3E3E;
+}
+
+.charts{
+    display: flex;
+    flex-direction: row;
+    margin-top: 30px;
+    height: 400px;
+}
+
+.graph{
+    display: flex;
+    flex-direction: column;
+    width: 805px;
+    background-color: #FFFFFF;
+    border-radius: 5px;
+    -webkit-box-sizing: border-box;
+    padding-left: 29px;
+    padding-top: 24px;
+    padding-bottom: 29px;
+    padding-right: 29px;
+}
+
+.graphHeader{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.graphTitle{
+    font-size: 22px;
+    font-weight: 500;
+    color: #3E3E3E;
+    margin-right: 539px;
+}
+
+.sideTab{
+    margin-right: 20px;
+    font-size: 12px;
+    color: #ADADAD;
+}
+
+.graphImg{
+    margin-top: 25px;
+    height: 295px;
+}
+
+.pieChart{
+    display: flex;
+    flex-direction: column;
+    width: 385px;
+    background-color: #FFFFFF;
+    border-radius: 5px;
+    margin-left: 30px;
+    -webkit-box-sizing: border-box;
+    padding-left: 29px;
+    padding-top: 24px;
+    padding-bottom: 29px;
+    padding-right: 29px;
+}
+
+.pieChartHeader{
+    font-size: 22px;
+    font-weight: 500;
+    color: #3E3E3E;
+}
+
+.pieChartImg{
+    display: flex;
+    height: 250px;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.pieSubTitle{
+    display: flex;
+    flex-direction: row;
+    margin-left: 20px;
+}
+
+.pieSubTtlColumn{
+    display: flex;
+    flex-direction: column;
+    margin-right: 26px;
+}
+
+.rowCountry{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 18px;
+}
+
+.countryColor{
+    height: 18px;
+    width: 18px;
+    border-radius: 50%;
+    margin-right: 9px;
+}
+
+.countryName{
+    font-size: 15px;
+    color: #3E3E3E;
+}
+
+.invoice{
+    background-color: #FFFFFF;
+    border-radius: 5px;
+    width: 1217px;
+    margin-top: 30px;
+    -webkit-box-sizing: border-box;
+    padding-left: 29px;
+    padding-top: 23px;
+    padding-bottom: 27px;
+    padding-right: 29px;
+}
+
+.invoiceTitle{
+    font-size: 22px;
+    font-weight: 500;
+    color: #3E3E3E;
+    margin-bottom: 37px;
+}
+
+.invoiceTable{
+    display: grid;
+    grid-template-columns: max-content max-content max-content max-content max-content max-content;
+    padding: 5px;
+}
+
+.tableHeader{
+    font-size: 15px;
+    color: #ADADAD;
+}
+
+tbody tr{
+    font-size: 15px;
+    color: #3E3E3E;
+}
+
+.statusBtnPaid{
+    display: flex;
+    height: 26px;
+    width: 50px;
+    background-color: #EBFFEF;
+    border-radius: 5px;
+    color: #3CDD5F;
+    justify-content: center;
+    align-items: center;
+}
+
+.statusBtnFailed{
+    display: flex;
+    height: 26px;
+    width: 60px;
+    background-color: #FFF5F5;
+    border-radius: 5px;
+    color: #FF4545;
+    justify-content: center;
+    align-items: center;
+}
+
+.statusBtnPending{
+    display: flex;
+    height: 26px;
+    width: 75px;
+    background-color: #F8F8F8;
+    border-radius: 5px;
+    color: #BABABA;
+    justify-content: center;
+    align-items: center;
+}
+
+/* .dashboardLink{
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -209,7 +468,8 @@ body{
 .dashboardLink:hover{
     background-color: #FFF3F4;
     color: #C8242F;
-}
+} 
+
 .analysisLink:hover{
     background-color: #FFF3F4;
     color: #C8242F;
@@ -233,4 +493,4 @@ body{
 .settingLink:hover{
     background-color: #FFF3F4;
     color: #C8242F;
-}
+} */
