@@ -9,22 +9,30 @@
 
     <body>
 
-        <div class="header">
+        <div class="header" id="headerBar">
             
-            <img class="menuIcon" src="images/menu-bar.svg">
-            <img class="logoIcon" src="images/header-logo.svg">
-            <img class="searchIcon" src="images/search-icon.svg">
-            <p class="searchText">search</p>
-            <img class="notificationIcon" src="images/notification-icon.svg">
-            <img class="profile" src="images/profile.png">
-            <p class="profileName">John Doe</p>
-            <img class="downArrow" src="images/downward-arrow.svg">
+            <div class="headerStart">
+                <img class="menuIcon" src="images/menu-bar.svg" id="menuBtn" onclick="showMenu()">
+                <img class="logoIcon" src="images/header-logo.svg">
+            </div>
+
+            <div class="headerSearch">
+                <img class="searchIcon" src="images/search-icon.svg">
+                <input type="search" class="form-control rounded" placeholder="Search"/>
+            </div>
+
+            <div class="headerEnd">
+                <img class="notificationIcon" src="images/notification-icon.svg">
+                <img class="profile" src="images/profile.png">
+                <p class="profileName">John Doe</p>
+                <img class="downArrow" src="images/downward-arrow.svg">
+            </div>
 
         </div>
 
-        <div class="dashboard">
+        <div class="dashboard" id="dashboard">
 
-            <div class="sideNav">
+            <div class="sideNav" id="sideNavMenu">
                 
                 <a href="#">
                     <div class="dashboardLink" id="dashboardBtn">
@@ -130,9 +138,11 @@
                     <div class="graph">
                         <div class="graphHeader">
                             <p class="graphTitle">Sales</p>
-                            <p class="sideTab">Weekly</p>
-                            <p class="sideTab">Monthly</p>
-                            <p class="sideTab">Yearly</p>
+                            <div class="graphTabs">
+                                <p>Weekly</p>
+                                <p>Monthly</p>
+                                <p>Yearly</p>
+                            </div>
                         </div>
                         <img class="graphImg" src="images/data-graph.png">
                     </div>
@@ -278,16 +288,19 @@
     </body>
 
 </html>
-<!-- 
+
 <script>
-    var dashboardPanel = document.getElementById("dashboardPanel");
-    document.getElementById("dashboardBtn").onclick = function(){
-        if(dashboardPanel.style.display === "none"){
-            dashboardPanel.style.display === "block"
-        }
+    const sideNavMenu = document.getElementById("sideNavMenu");
+    function showMenu(){
+        if(sideNavMenu.style.display != "none"){
+            sideNavMenu.style.display = "none";
+            document.getElementById("dashboard").style.gridTemplateColumns = "auto";
+        }   
         else{
-            dashboardPanel.style.display("none");
+            sideNavMenu.style.display = "block";
+            document.getElementById("headerBar").style.width = "100vw"
+            document.getElementById("dashboard").style.gridTemplateColumns = "auto auto";
         }
     }
 
-</script> -->
+</script>
