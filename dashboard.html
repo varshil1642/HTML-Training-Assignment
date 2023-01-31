@@ -2,9 +2,112 @@
 <html>
 
     <head>
+        <meta charset = "utf-8">
+        <meta name = "viewport" content = "width=device-width, initial-scale = 1">
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="stylesheet" href="css/styledashboard.css">
         <title>Dashboard</title>
+        <style>
+            @media screen and (max-width: 1130px){
+                .dashCards{
+                    grid-template-columns: auto auto auto;
+                }
+                .charts{
+                    grid-template-columns: auto;
+                }
+                .graph{
+                    margin-bottom: 20px;
+                }
+            }
+
+            @media screen and (max-width: 950px) {
+                .invoice{
+                    white-space: nowrap;
+                    /* max-width: 802px; */
+                    overflow: auto;
+                    max-width: 90vw;
+                }
+                .table-wrapper{
+                    width: 100%;
+                }
+                .invoiceDiv{
+                    width: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+            }
+
+            @media screen and (max-width: 862px) {
+                .dashCards{
+                    grid-template-columns: auto auto;
+                }
+                .profile{
+                    margin-left: 20px;
+                }
+            }
+
+            @media screen and (max-width: 775px) {
+                .dashboardBody{
+                    padding: 20px;
+                }
+            }
+
+            @media screen and (max-width: 670px) {
+                .profileName{
+                    display: none;
+                }
+                .headerEnd{
+                    display: none;
+                    /* margin-left: 15px;
+                    width: fit-content; */
+                }
+                .header{
+                    grid-template-columns: auto auto;
+                    padding-right: 15px;
+                    margin-right: -5px;
+                }
+                .dashboard{
+                    margin-right: -5px;
+                }
+                .notifiLink{
+                    display: block;
+                }
+                .profileLink{
+                    display: block;
+                }
+            }
+
+            @media screen and (max-width: 465px) {
+                .sideNav{
+                    width: -webkit-fill-available;
+                }
+                .headerStart{
+                    margin-right: 10px;
+                }
+                .logoIcon{
+                    margin-left: 10px;
+                }
+            }
+
+            @media screen and (max-width: 440px) {
+                .dashCards{
+                    grid-template-columns: auto;
+                }
+            }
+
+            @media screen and (max-width: 370px) {
+                .logoIcon{
+                    display: none;
+                }
+                .graphHeader{
+                    flex-direction: column;
+                }
+                .graphTabs{
+                    justify-content: center;
+                }
+            }
+        </style>
     </head>
 
     <body>
@@ -22,10 +125,14 @@
             </div>
 
             <div class="headerEnd">
-                <img class="notificationIcon" src="images/notification-icon.svg">
-                <img class="profile" src="images/profile.png">
-                <p class="profileName">John Doe</p>
-                <img class="downArrow" src="images/downward-arrow.svg">
+                <!-- <div class="header-end-1"> -->
+                    <img class="notificationIcon" src="images/notification-icon.svg">
+                <!-- </div> -->
+                <!-- <div class="header-end-2"> -->
+                    <img class="profile" src="images/profile.png">
+                    <p class="profileName">John Doe</p>
+                    <img class="downArrow" src="images/downward-arrow.svg">
+                <!-- </div> -->
             </div>
 
         </div>
@@ -33,10 +140,12 @@
         <div class="dashboard" id="dashboard">
 
             <div class="sideNav" id="sideNavMenu">
+
+                <!-- <img class="logoIcon img-fluid" src="images/header-logo.svg"> -->
                 
                 <a href="#">
                     <div class="dashboardLink" id="dashboardBtn">
-                            <img class="dashboardIcon" src="images/dashboard-default.svg">
+                            <div class="dashboardIcon"><img src="images/dashboard-default.svg"></div>
                             <p>Dashboard</p>
                     </div>
                 </a>
@@ -83,9 +192,24 @@
                     </div>
                 </a>
 
+                <a href="#" class="notifiLink">
+                    <div>
+                        <img class="notifiIcon" src="images/notification-icon.svg">
+                        <p>Notification</p>
+                    </div>
+                </a>
+
+                <a href="#" class="profileLink">
+                    <div>
+                        <img class="profileIcon" src="images/profile.png">
+                        <p>John Doe</p>
+                        <img class="downArrow" src="images/downward-arrow.svg">
+                    </div>
+                </a>
+
             </div>
 
-            <div class="dashboardBody" id="dashboardPanel">
+            <div class="dashboardBody" id="dashboardBody">
 
                 <p class="dashboardTitle">Dashboard</p>                
 
@@ -144,7 +268,7 @@
                                 <p>Yearly</p>
                             </div>
                         </div>
-                        <img class="graphImg" src="images/data-graph.png">
+                        <img class="graphImg img-fluid" src="images/data-graph.png">
                     </div>
 
                     <div class="pieChart">
@@ -152,37 +276,41 @@
                         <p class="pieChartHeader">Sales by Country</p>
 
                         <div class="pieChartImg">
-                            <img src="images/pie-chart.svg">
+                            <img class="img-fluid" src="images/pie-chart.svg">
                         </div>
 
                         <div class="pieSubTitle">
 
-                            <div class="pieSubTtlColumn" style="flex: 0 0 198px">
-                                
-                                <div class="rowCountry">
-                                    <div class="countryColor" style="background-color: #C8242F;"></div>
-                                    <p class="countryName">United States of America</p>
-                                </div>
+                            <div class="columns">
+                                <div class="pieSubTtlColumn">
 
-                                <div class="rowCountry">
-                                    <div class="countryColor" style="background-color: #F16C20;"></div>
-                                    <p class="countryName">Russia</p>
-                                </div>
+                                    <div class="rowCountry">
+                                        <div class="countryColor" style="background-color: #C8242F;"></div>
+                                        <p class="countryName">United States of America</p>
+                                    </div>
 
+                                    <div class="rowCountry">
+                                        <div class="countryColor" style="background-color: #F16C20;"></div>
+                                        <p class="countryName">Russia</p>
+                                    </div>
+
+                                </div>
                             </div>
 
-                            <div class="pieSubTtlColumn">
-                                
-                                <div class="rowCountry">
-                                    <div class="countryColor" style="background-color: #A2B86C;"></div>
-                                    <p class="countryName">Canada</p>
-                                </div>
+                            <div class="columns">
+                                <div class="pieSubTtlColumn">
+                                    
+                                    <div class="rowCountry">
+                                        <div class="countryColor" style="background-color: #A2B86C;"></div>
+                                        <p class="countryName">Canada</p>
+                                    </div>
 
-                                <div class="rowCountry">
-                                    <div class="countryColor" style="background-color: #EBC844;"></div>
-                                    <p class="countryName">India</p>
-                                </div>
+                                    <div class="rowCountry">
+                                        <div class="countryColor" style="background-color: #EBC844;"></div>
+                                        <p class="countryName">India</p>
+                                    </div>
 
+                                </div>
                             </div>
 
                         </div>
@@ -191,94 +319,98 @@
 
                 </div>
 
-                <div class="invoice">
-                    <p class="invoiceTitle">Invoice</p>
-                    <table class="table">
-                        <thead>
-                          <tr>
-                            <th scope="col" class="tableHeader">INVOICE</th>
-                            <th scope="col" class="tableHeader">COMPANY NAME</th>
-                            <th scope="col" class="tableHeader">EMAIL</th>
-                            <th scope="col" class="tableHeader">DUE DATE</th>
-                            <th scope="col" class="tableHeader">STATUS</th>
-                            <th scope="col" class="tableHeader">AMOUNT</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            <td>651535</td>
-                            <td>Public Adjusting Firm</td>
-                            <td>georgia.young@example.com</td>
-                            <td>24 May, 2020</td>
-                            <td><div class="statusBtnPaid">Paid</td></div>
-                            <td>$47,800</td>
-                          </tr>
-                          <tr>
-                            <td>558612</td>
-                            <td>Others</td>
-                            <td>jessica.hanson@example.com</td>
-                            <td>24 May, 2020</td>
-                            <td><div class="statusBtnPaid">Paid</td></div>
-                            <td>$98,000</td>
-                          </tr>
-                          <tr>
-                            <td>558612</td>
-                            <td>Vendor</td>
-                            <td>alma.lawson@example.com/td>
-                            <td>8 Sep, 2020</td>
-                            <td><div class="statusBtnPaid">Paid</td></div>
-                            <td>$20,900</td>
-                          </tr>
-                          <tr>
-                            <td>558612</td>
-                            <td>Property Management Company</td>
-                            <td>kenzi.lawson@example.com</td>
-                            <td>22 Oct, 2020</td>
-                            <td><div class="statusBtnPaid">Paid</td></div>
-                            <td>$10,570</td>
-                          </tr>
-                          <tr>
-                            <td>651535</td>
-                            <td>Subcontractor Company</td>
-                            <td>jackson.graham@example.com</td>
-                            <td>1 Feb, 2020</td>
-                            <td><div class="statusBtnFailed">Failed</td></div>
-                            <td>$10,200</td>
-                          </tr>
-                          <tr>
-                            <td>653518</td>
-                            <td>Mortgage Company</td>
-                            <td>felicia.reid@example.com</td>
-                            <td>22 Oct, 2020</td>
-                            <td><div class="statusBtnPending">Pending</td></div>
-                            <td>$12,600</td>
-                          </tr>
-                          <tr>
-                            <td>487441</td>
-                            <td>TPA</td>
-                            <td>dolores.chambers@example.com</td>
-                            <td>21 Sep, 2020</td>
-                            <td><div class="statusBtnPaid">Paid</td></div>
-                            <td>$11,170</td>
-                          </tr>
-                          <tr>
-                            <td>267400</td>
-                            <td>Fire Department</td>
-                            <td>nevaeh.simmons@example.com</td>
-                            <td>17 Oct, 2020</td>
-                            <td><div class="statusBtnFailed">Failed</td></div>
-                            <td>$28,000</td>
-                          </tr>
-                          <tr>
-                            <td>449003</td>
-                            <td>Insurance Carrier</td>
-                            <td>curtis.weaver@example.com</td>
-                            <td>21 Sep, 2020</td>
-                            <td><div class="statusBtnPaid">Paid</td></div>
-                            <td>$10,000</td>
-                          </tr>
-                        </tbody>
-                      </table>
+                <div class="invoiceDiv">
+                    <div class="invoice">
+                        <p class="invoiceTitle">Invoice</p>
+                        <div class="table-wrapper">
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th scope="col" class="tableHeader">INVOICE</th>
+                                    <th scope="col" class="tableHeader">COMPANY NAME</th>
+                                    <th scope="col" class="tableHeader">EMAIL</th>
+                                    <th scope="col" class="tableHeader">DUE DATE</th>
+                                    <th scope="col" class="tableHeader">STATUS</th>
+                                    <th scope="col" class="tableHeader">AMOUNT</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>651535</td>
+                                    <td>Public Adjusting Firm</td>
+                                    <td>georgia.young@example.com</td>
+                                    <td>24 May, 2020</td>
+                                    <td><div class="statusBtnPaid">Paid</td></div>
+                                    <td>$47,800</td>
+                                </tr>
+                                <tr>
+                                    <td>558612</td>
+                                    <td>Others</td>
+                                    <td>jessica.hanson@example.com</td>
+                                    <td>24 May, 2020</td>
+                                    <td><div class="statusBtnPaid">Paid</td></div>
+                                    <td>$98,000</td>
+                                </tr>
+                                <tr>
+                                    <td>558612</td>
+                                    <td>Vendor</td>
+                                    <td>alma.lawson@example.com/td>
+                                    <td>8 Sep, 2020</td>
+                                    <td><div class="statusBtnPaid">Paid</td></div>
+                                    <td>$20,900</td>
+                                </tr>
+                                <tr>
+                                    <td>558612</td>
+                                    <td>Property Management Company</td>
+                                    <td>kenzi.lawson@example.com</td>
+                                    <td>22 Oct, 2020</td>
+                                    <td><div class="statusBtnPaid">Paid</td></div>
+                                    <td>$10,570</td>
+                                </tr>
+                                <tr>
+                                    <td>651535</td>
+                                    <td>Subcontractor Company</td>
+                                    <td>jackson.graham@example.com</td>
+                                    <td>1 Feb, 2020</td>
+                                    <td><div class="statusBtnFailed">Failed</td></div>
+                                    <td>$10,200</td>
+                                </tr>
+                                <tr>
+                                    <td>653518</td>
+                                    <td>Mortgage Company</td>
+                                    <td>felicia.reid@example.com</td>
+                                    <td>22 Oct, 2020</td>
+                                    <td><div class="statusBtnPending">Pending</td></div>
+                                    <td>$12,600</td>
+                                </tr>
+                                <tr>
+                                    <td>487441</td>
+                                    <td>TPA</td>
+                                    <td>dolores.chambers@example.com</td>
+                                    <td>21 Sep, 2020</td>
+                                    <td><div class="statusBtnPaid">Paid</td></div>
+                                    <td>$11,170</td>
+                                </tr>
+                                <tr>
+                                    <td>267400</td>
+                                    <td>Fire Department</td>
+                                    <td>nevaeh.simmons@example.com</td>
+                                    <td>17 Oct, 2020</td>
+                                    <td><div class="statusBtnFailed">Failed</td></div>
+                                    <td>$28,000</td>
+                                </tr>
+                                <tr>
+                                    <td>449003</td>
+                                    <td>Insurance Carrier</td>
+                                    <td>curtis.weaver@example.com</td>
+                                    <td>21 Sep, 2020</td>
+                                    <td><div class="statusBtnPaid">Paid</td></div>
+                                    <td>$10,000</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
                 </div>
 
             </div>
@@ -290,16 +422,25 @@
 </html>
 
 <script>
+
     const sideNavMenu = document.getElementById("sideNavMenu");
+    console.log(toString(sideNavMenu.style.display));
+
     function showMenu(){
-        if(sideNavMenu.style.display != "none"){
-            sideNavMenu.style.display = "none";
-            document.getElementById("dashboard").style.gridTemplateColumns = "auto";
+        if(window.getComputedStyle(sideNavMenu).display === 'none'){
+            sideNavMenu.style.display = "block";
+            sideNavMenu.style.position = "absolute"
+            if(parseInt(window.innerWidth) <= 500){
+                sideNavMenu.style.minHeight = "fit-content";
+                document.body.style.overflow = "hidden";
+            }
+            else{
+                sideNavMenu.style.minHeight = "100vh";
+            }
         }   
         else{
-            sideNavMenu.style.display = "block";
-            document.getElementById("headerBar").style.width = "100vw"
-            document.getElementById("dashboard").style.gridTemplateColumns = "auto auto";
+            sideNavMenu.style.display = "none";
+            document.body.style.overflow = "auto";
         }
     }
 

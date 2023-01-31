@@ -2,33 +2,134 @@
 <html>
 
     <head>
+        <meta charset = "utf-8">
+        <meta name = "viewport" content = "width=device-width, initial-scale = 1">
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="stylesheet" href="css/styleinnerpage.css">
+        <link rel="stylesheet" href="css/styledashboard.css">
         <title>Analysis</title>
+
+        <style>
+            @media screen and (max-width: 1130px){
+                
+            }
+
+            @media screen and (max-width: 950px) {
+                
+            }
+
+            @media screen and (max-width: 862px) {
+                .profile{
+                    margin-left: 20px;
+                }
+            }
+
+            @media screen and (max-width: 810px) {
+                .fourColumns{
+                    display: grid;
+                    grid-template-columns: auto auto;
+                    row-gap: 10px;
+                }
+            }
+
+            @media screen and (max-width: 775px) {
+                .analysisBody{
+                    padding: 20px;
+                }
+            }
+
+            @media screen and (max-width: 670px) {
+                .profileName{
+                    display: none;
+                }
+                .headerEnd{
+                    display: none;
+                    /* margin-left: 15px;
+                    width: fit-content; */
+                }
+                .header{
+                    grid-template-columns: auto auto;
+                    padding-right: 10px;
+                }
+                .notifiLink{
+                    display: block;
+                }
+                .profileLink{
+                    display: block;
+                }
+            }
+
+            @media screen and (max-width: 476px) {
+                
+            }
+
+            @media screen and (max-width: 465px) {
+                .sideNav{
+                    width: -webkit-fill-available;
+                }
+                .headerStart{
+                    margin-right: 10px;
+                }
+                .logoIcon{
+                    margin-left: 10px;
+                }
+            }
+
+            @media screen and (max-width: 425px) {
+                .col{
+                    margin-bottom: 10px;
+                    flex: 1 0 100%;
+                }
+            }
+
+            @media screen and (max-width: 370px) {
+                .logoIcon{
+                    display: none;
+                }
+            }
+        </style>
+
     </head>
 
     <body>
 
-        <div class="header">
+        <div class="header" id="headerBar">
             
-            <img class="menuIcon" src="images/menu-bar.svg">
-            <img class="logoIcon" src="images/header-logo.svg">
-            <img class="searchIcon" src="images/search-icon.svg">
-            <p class="searchText">search</p>
-            <img class="notificationIcon" src="images/notification-icon.svg">
-            <img class="profile" src="images/profile.png">
-            <p class="profileName">John Doe</p>
-            <img class="downArrow" src="images/downward-arrow.svg">
+            <div class="headerStart">
+                <img class="menuIcon" src="images/menu-bar.svg" id="menuBtn" onclick="showMenu()">
+                <img class="logoIcon" src="images/header-logo.svg">
+            </div>
+
+            <div class="headerSearch">
+                <img class="searchIcon" src="images/search-icon.svg">
+                <input type="search" class="form-control rounded" placeholder="Search"/>
+            </div>
+
+            <div class="headerEnd">
+                <!-- <div class="header-end-1"> -->
+                    <img class="notificationIcon" src="images/notification-icon.svg">
+                <!-- </div> -->
+                <!-- <div class="header-end-2"> -->
+                    <img class="profile" src="images/profile.png">
+                    <p class="profileName">John Doe</p>
+                    <img class="downArrow" src="images/downward-arrow.svg">
+                <!-- </div> -->
+            </div>
 
         </div>
 
         <div class="analysis">
 
-            <div class="sideNav">
+            <div class="sideNav" id="sideNavMenu">
+
+                
+                <!-- <div class="logoIconDiv">
+                    <img class="logoIcon img-fluid" src="images/header-logo.svg">
+                </div> -->
                 
                 <a href="#">
                     <div class="dashboardLink" id="dashboardBtn">
-                            <img class="dashboardIcon" src="images/dashboard-default.svg">
+                            <div class="dashboardIcon"><img src="images/dashboard-default.svg"></div>
                             <p>Dashboard</p>
                     </div>
                 </a>
@@ -75,8 +176,24 @@
                     </div>
                 </a>
 
+                <a href="#" class="notifiLink">
+                    <div>
+                        <img class="notifiIcon" src="images/notification-icon.svg">
+                        <p>Notification</p>
+                    </div>
+                </a>
+
+                <a href="#" class="profileLink">
+                    <div>
+                        <img class="profileIcon" src="images/profile.png">
+                        <p>John Doe</p>
+                        <img class="downArrow" src="images/downward-arrow.svg">
+                    </div>
+                </a>
+
             </div>
 
+            
             <div class="analysisBody">
                 <p class="analysisTitle">Analysis</p>
 
@@ -84,27 +201,29 @@
                     <p class="titles">One Column</p>
 
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Name">
-                    </div>
-                    
-                    <div class="form-group">
-                        <select class="form-select">
-                            <option disabled selected hidden>Dropdown</option>
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                          </select>
-                    </div>
+                        <div class="col">
+                            <input type="text" class="form-control" placeholder="Name">
+                        </div>
+                        
+                        <div class="col">
+                            <select class="form-select">
+                                <option disabled selected hidden>Dropdown</option>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                            </select>
+                        </div>
 
-                    <div class="form-group" style="margin-bottom: 44px;">
-                        <textarea class="form-control" rows="5" placeholder="Multiple Line"></textarea>
+                        <div class="col">
+                            <textarea class="form-control" rows="5" placeholder="Multiple Line"></textarea>
+                        </div>
                     </div>
 
                     <p class="titles">Two Column</p>
 
-                    <div class="form-group" style="margin-bottom: 44px;">
-                        <div class="row mb-3">
+                    <div class="form-group">
+                        <div class="row">
                             <div class="col">
                                 <input type="text" class="form-control" placeholder="Name">
                             </div>
@@ -131,7 +250,7 @@
 
                     <p class="titles">Three Column</p>
 
-                    <div class="form-group" style="margin-bottom: 44px;">
+                    <div class="form-group">
                         <div class="row">
                             <div class="col">
                                 <input type="text" class="form-control focusInput shadow-none" placeholder="Focus">
@@ -147,15 +266,15 @@
 
                     <p class="titles">Four Column</p>
 
-                    <div class="form-group" style="margin-bottom: 44px;">
-                        <div class="row">
+                    <div class="form-group">
+                        <div class="row fourColumns">
                             <div class="col designationBox">
                                 <input type="text" class="form-control shadow-none" placeholder="Designation" value="UI Designer">
-                                <small>Enter valid data</small>
+                                <div class="inputSmallDiv"><small>Enter valid data</small></div>
                             </div>
                             <div class="col">
                                 <input type="text" class="form-control" placeholder="Name">
-                                <small class="text-muted">Enter your full name as per ID</small>
+                                <div class="inputSmallDiv"><small class="text-muted">Enter your full name as per ID</small></div>
                             </div>
                             <div class="col">
                                 <input type="text" class="form-control" placeholder="Username" value="johndoe">
@@ -215,7 +334,7 @@
                     <p class="subTitles">Snackbar</p>
 
                     <div class="snackBar">
-                        <div class="row mb-4 snackBarRow">
+                        <div class="row snackBarRow">
                             <div class="col errorMsg">
                                 <img src="images/error-icon.svg">
                                 <p>This is an error Message</p>
@@ -267,3 +386,29 @@
     </body>
 
 </html>
+
+<script>
+
+    const sideNavMenu = document.getElementById("sideNavMenu");
+    console.log(toString(sideNavMenu.style.display));
+
+    function showMenu(){
+        if(window.getComputedStyle(sideNavMenu).display === 'none'){
+            sideNavMenu.style.display = "block";
+            sideNavMenu.style.position = "absolute"
+            sideNavMenu.style.minHeight = "100vh";
+            if(parseInt(window.innerWidth) <= 500){
+                sideNavMenu.style.minHeight = "fit-content";
+                document.body.style.overflow = "hidden";
+            }
+            else{
+                sideNavMenu.style.minHeight = "100vh";
+            }
+        }   
+        else{
+            sideNavMenu.style.display = "none";
+            document.body.style.overflow = "auto";
+        }
+    }
+
+</script>
